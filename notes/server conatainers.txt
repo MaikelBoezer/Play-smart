@@ -1,0 +1,98 @@
+server conatainers
+
+container lucid_cerf:
+ it is a sftp container that is lissing on 0.0.0.0 port 22 or :: port 22
+ 
+ it show no logs, so it has not been used in a while
+
+-------------------
+
+container sftp_server:
+ it is a sftp container that is lissing on 0.0.0.0 port 22 or :: port 22
+
+ it has logs showing a lot of accepted password and a lot of failed connections
+
+-------------------
+
+conatainer admiring_goodall:
+ is a postgress conatiner
+
+ the last logs it has is that is has an error while starting up 
+
+-------------------
+
+container staging_production_postgres_db:
+ has log of actively being used
+
+-------------------
+
+container streamlit-dashboard:
+ shows a lot of warnings 
+
+ can be viewed on http://0.0.0.0:8501 when the container is online
+
+ not sure how up to date the dashboard is
+
+--------------------
+
+container research-website:
+ website about the research toolkit
+ 
+ can be connected to by hhtp://10.4.28.2
+
+--------------------
+
+container monitoring:
+ is a dashboard for monitoring play-o-meter
+ 
+ runs on http://0.0.0.0:8050
+
+--------------------
+
+container data-orchestration:
+ monitoring something 
+
+ has python scrips for mkv to mp4 and openface
+
+ needs to be looked into further to understand what this container does and or is mend to do
+
+--------------------
+
+
+
+
+
+
+
+
+
+
+
+---------------------
+the python-app container needs 30387dea9b3c_postgres-container to run 
+
+container analytics-backend
+ runs on http://0.0.0.0:8000
+
+docker logs analytics-backend
+
+docker inspect data-orchestration | grep -A 5 Cmd
+
+docker inspect data-orchestration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

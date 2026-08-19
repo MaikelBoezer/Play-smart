@@ -1,0 +1,26 @@
+play-o-meter repo vs Hive PC repo
+
+the start bat file 'run_data_collection' seems off:
+ a lot of info requested that is annoying to give
+ no clear way to start or stop the data recording 
+
+start up main.py
+ lots of imports from different files are needed
+ server info is absent 
+ 
+ starts up key logger 
+  the key logger seems better organised 
+
+ starts tobii eye tracker
+  way more code not sure if how well it works
+
+ start up audio visual capture
+  does something with OBS not sure how good or useful it is
+  nothing similar in the Hive repo 
+
+ starts save unix time to file
+  it saves unix time?
+
+
+
+ 

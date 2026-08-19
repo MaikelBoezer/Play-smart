@@ -1,0 +1,3 @@
+research software needs a readme about how to install the poetry env and how to use it. - done
+
+it needs a readme how to set up the OBS overlay. - done

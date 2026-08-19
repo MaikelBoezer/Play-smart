@@ -1,0 +1,21 @@
+17. Example of the models used, cognitive load model, reaction time, speech to text
+
+Add a small walk through of the system that a file goes through.
+
+18. referring back to the previous one
+
+Mention that we have a mobile server
+
+Add a video of fotos of the models in use
+
+Tell that the research intern oversees the server infrastructure and git hub repos 
+
+- Take a look at cyber security for the project
+
+19. Ask uther for a short description 
+
+Add  ADS&AI staff
+
+The knowledge the consortium brings to the table (make a summary of the big proposal)
+
+

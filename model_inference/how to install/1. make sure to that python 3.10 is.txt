@@ -1,0 +1,36 @@
+1. make sure to that python 3.10 is installed
+
+2. Open a terminal in the folder where your files are and create a fresh venv  
+	run: python -m venv venv
+
+3. activate the venv
+	run: venv\Scripts\activate
+
+4. Install dependencies from requirements.txt
+	run: Install dependencies from requirements.txt
+
+5. Verify CUDA works after install, if it return True then everything is installed correctly
+	run: python -c "import torch; print(torch.cuda.is_available())"
+
+6. if it prints False, PyTorch need to be installed manually
+
+7. to install PyTorch manually uninstall PyTorch first
+	run: pip uninstall torch torchvision torchaudio
+
+8. check what version of cuda is installed on the PC
+	run: nvidia-smi
+
+9. go to PyTorch website https://pytorch.org/get-started/locally/ 
+	and install the correct version of PyTorch
+
+10. verify if CUDA is working again
+	run: run: python -c "import torch; print(torch.cuda.is_available())"
+
+how to set up the network drive
+
+1. pic 1
+
+2. pic 2
+
+if not working
+	run: net use Z: \\10.4.28.2\esports /user:kowalski

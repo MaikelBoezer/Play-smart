@@ -1,0 +1,20 @@
+PC install program
+
+run in admin powershell
+
+1. Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+
+-Hive PC vertion 
+2. choco install firefox steam spotify valorant python vscode unity-hub  leagueoflegends epicgameslauncher discord ea-app ubisoft-connect overwolf minecraft-education nvidia-app -y
+
+-personl PC vertion 
+choco install steam spotify valorant python vscode nvidia-app git github-desktop
+choco install python git vscode github-desktop nvidia-app steam spotify valorant 
+
+* it is not possible to install battle.net with this app or any other apps because of how the battle.net install is set-up.
+** git, github-desktop are optional for Hive PC's
+
+choco install firefox
+
+Chocolatey https://community.chocolatey.org/packages?q=

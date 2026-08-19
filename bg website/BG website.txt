@@ -1,0 +1,60 @@
+BG website
+
+navigation bar acts weird when scrolling down
+need to make the whole website in Engels
+eiter keep the contact part at the bottom of the main page or keep the contact page
+
+
+main page
+	- needs a visual update 
+	- text on the website need to be updated as well
+	- location does not work
+	- no idea whos phone number is on the page
+	- all links to socials work (including discord)
+
+about us page  
+	- no back button 
+	- texts needs a small update
+	- discord link is not working (fixed)
+	- into video is still good
+
+become a member page (could use a name change) 
+	- is in Dutch 
+	- links to 'inschrijfformulier' do we need to keep this?
+
+Meet our Esports teams page
+	- outdated do we want to keep it like this and just update or rework it?
+
+activities page
+	- only show hiring post 
+	- could be it own tab and are these really activities
+
+partners page
+	- check if this is up to date
+
+Esports Tour page
+	- what is a Esports tour??
+	- recent post and archives maybe get there own page 
+	- meta tab not sure why it is here
+	- log out button needs to be places somewhere else
+
+Contact page
+	- add a discord link
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+set up of the code from the last group
+
+these folders are directly on the server
+auto_cleaning  auto_merge  auto_quality  backend-deployment  data_collection  openvpn-ca
+
+looking into each folder
+
+ backend-deployment:
+  app  bget.db  docker-compose.yml  requirements.txt
+   requirements.txt   - required libraries for the code.
+   docker-compose.yml - single-service stack for a FastAPI backend.
+   bget.db    	     - is a SQLite database that sets up 3 tables: users, feedback, toolkit_config.
+
+   app:
+    crud  database.py  __init__.py  main.py  models  __pycache__  router  services  utils
+     main.py     - entry point of the Play-O-Meter backend API
+     database.py - sets up the database connection for the entire backend. It's the bridge between FastAPI and the bget.db file.
+    
+     crud:
+      feedback.py  __init__.py  __pycache__  toolkit.py  users.py
+       feedback.py - This file handles all database operations for the feedback table
+       toolkit.py  - This file handles all database operations for the toolkit_config table
+       users.py    - This file handles all database operations for the users table
+        
+     models:
+      database_models.py  feedback.py  __init__.py  __pycache__  toolkit.py  users.py
+       database_models.py - This file defines the actual database tables using SQLAlchemy, these models define what gets stored in bget.db.
+       feedback.py	  - This file defines the data shapes for feedback, it controls what data looks like going in and out of the API, separate from the database model.
+       toolkit.py         - This file defines the data shapes for toolkit, it controls what data looks like going in and out of the API, separate from the database model.
+       users.py           - This file defines the data shapes for users, it controls what data looks like going in and out of the API, separate from the database model.
+       
+     router:
+      auth.py  biometric.py  feedback.py  __init__.py  match_data.py  __pycache__  riot.py  toolkit.py  videos.py
+       auth.py	      - This file handles user authentication, signup and login, via two POST endpoints
+       biometric.py   - This file handles biometric data retrieval via two GET endpoints.
+       feedback.py    - This file exposes the feedback API endpoints — it's the HTTP layer that connects incoming requests to the crud/feedback.py functions you saw earlier.
+       match_data.py  - This file handles match data browsing — finding, listing, and reading match files from the data directory. It has 4 endpoints:
+       riot.py        - This file acts as a proxy between the Play-O-Meter backend and the Riot Games API. Instead of the frontend calling Riot directly (which would expose the API key), all Riot requests go through this backend router.
+       toolkit.py     - File dialog endpoints (/select-file, /select-obs, /select-tobii) — open native Windows file picker dialogs using tkinter so the user can browse for the main.bat, OBS, and Tobii executables. This only works because the backend runs locally on the player's machine, not on a remote server.
+       videos.py      - This file serves video files to the frontend — one single endpoint that streams .mp4 match recordings.
+     
+     services:
+      biometric_processor.py  __pycache__
+       biometric_processor.py - This is the core analytics engine of the Play-O-Meter — it takes a merged CSV file and produces a complete biometric analysis of a player's match performance.
+
+     utils:
+      auth.py  __pycache__
+       This is the authentication utility — it handles password hashing and JWT token logic used across the rest of the backend.
+
+ auto_cleaning:
+  auto_cleaning_and_dq.log  auto_cleaning_and_dq.py  esports_utils.py  __pycache__
+   auto_cleaning_and_dq.log - the logs of auto_cleaning_and_dq.py
+   auto_cleaning_and_dq.py  - This script is the automated cleaning and data quality (DQ) checking stage in the Play-O-Meter pipeline. It runs after auto_merge.py has produced merged CSVs.
+   esports_utils.py         - This is the shared utility library that auto_cleaning_and_dq.py (and likely other pipeline scripts) import from. It contains all the actual logic — the main script is just orchestration.
+
+ data_collection:
+  smb_test_results:
+   sample_data_20251120_133047.csv  test_run_20251120_133047.txt
+    sample_data_20251120_133047.csv - useless sample data as far as I can see.
+    test_run_20251120_133047.txt    - successful test, but not sure what it tested.
+
+
+ auto_merge:
+  auto_merge.log  auto_merge.py
+   auto_merge.log - the logs of auto_merge.py
+   auto_merge.py  - This is the first stage of the pipeline — it runs before auto_cleaning_and_dq.py and produces the *_merged.csv files that the cleaning script consumes.
+
+ auto_quality:
+  auto_dq_report.log  auto_dq_report.py  generate_dq_report.py  __pycache__
+   auto_dq_report.log    - the logs of auto_dq_report.py
+   auto_dq_report.py     - This is the third and final stage of the pipeline — it runs after auto_cleaning_and_dq.py has produced the *_dq_metrics.json files and turns them into a human-readable report.
+   generate_dq_report.py - This is the actual report-building engine that auto_dq_report.py delegates to. It's the most substantial file in the pipeline and produces both a Word document and summary CSVs.
+
+ openvpn-ca:
+  vpn for outside connection? I think not 100% sure.
+
+
+/mnt/raid0
+ cradle  esports  gac  lost+found  ml-api  sftp_dir
+  cradle  - this is of the cradle project and I am keeping clear of it.
+  esports - the folder the toolkit project data is being stored.
+  gac:
+   server_remote:
+    docker-compose.yml  sftp  sql
+ 
+  lost+found - made by the system leave it be
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

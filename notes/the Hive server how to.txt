@@ -1,0 +1,156 @@
+the Hive server how to
+
+terminal controls:
+ to clear a CMD terminal either type: clear or press ctrl + l
+
+ to move around between files use: cd 'filename', 
+ to see all available files use: ls,
+ to go back previous directory use: cd -, to return to home directory use: cd ~,
+
+Ubuntu server info:
+ ubuntu 22.04.5 LTS (Long Term Support)
+ Codename: jammy
+	22.04 Released in April 2022
+ this version is well supported does not need to be upgraded any time soon.
+
+connecting to the server:
+ ssh kowalski@10.4.28.2
+	(if asked to continue connecting - yes)
+ put in password: bg1337#@!
+
+server updating:
+ updating the server will not affect any of the docker container as they are isolated systems. 
+
+ download updates: 
+  run: sudo apt update
+
+ install updates:
+  run: sudo apt upgrade -y
+
+ after updating, reboot the server.
+
+rebooting the server:
+ run: sudo reboot
+ put in password: bg1337#@!
+
+docker containers on the server:
+
+ show all running containers:
+  run: docker ps
+
+ show all containers running or not:
+  run: docker ps -a 
+ 
+ show container sizes
+  run: docker ps -s
+
+ show container specific details:
+  run: docker container ls -a
+ 
+show all containers in a nice format:
+  run: docker ps -a --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"
+
+to start a docker container 
+  run: docker start [container_name]
+
+to download a file:
+ has to be run in a local terminal not one that is connected to the server.
+ run: scp -r kowalski@10.4.28.2:(file_path) Downloads
+  replace (file_path) with:
+ to download a specific file:	/home/kowalski/auto_merge/auto_merge.py
+ to download a folder:  	/home/kowalski/auto_merge/
+
+scp -r kowalski@10.4.28.2:model_testing/inference.py Documents
+
+how to upload to the server
+ scp docker-compose.yml kowalski@10.4.28.2:~/app/docker-compose.yml
+
+ how to connect to a container:
+  connect to the docker with bash:
+   docker exec -it <container_name_or_id> /bin/bash
+
+  connect to the docker with sh:
+   docker exec -it <container_name_or_id> /bin/sh
+
+ how to run a single command in a container:
+  docker exec <container_name> <command>
+
+
+
+docker inspect python-app
+
+docker container exploration:
+ 
+ docker logs 'container_name'
+
+ docker inspect 'container_name' | grep -A 5 Cmd
+
+ docker inspect 'container_name'
+
+
+docker exec -it f5611fe7be08_sftp-container /bin/bash
+
+docker logs -f f5611fe7be08_sftp-container
+
+
+sftp kowalski@10.4.28.2 -P 2422
+
+sftp -P 2422 localhost@10.4.28.2
+
+
+localhost:yourpassword:1234
+
+
+run on local terminal: 
+
+docker login
+
+docker build -t 220755842/bg-app-backend ./backend
+docker build -t 220755842/bg-app-frontend ./electron-app
+docker build -t 220755842/bg-app-pipeline ./pipeline
+docker build -t 220755842/bg-app-inference ./inference
+
+docker push 220755842/bg-app-backend
+docker push 220755842/bg-app-frontend
+docker push 220755842/bg-app-pipeline	
+docker push 220755842/bg-app-inference
+
+on the server run to pull new containers and rebuild them:
+docker compose pull
+
+docker compose up -d --force-recreate inference (services name not container name)
+
+sudo lsof +D /mnt/raid0/esports/data - This shows any processes currently accessing that directory. If the output is empty, nothing is using it.
+
+docker inspect $(docker ps -aq) | grep "esports/src" - This scans all containers (running or stopped) for that path in their volume mounts. If nothing comes back, no container references it.
+
+
+docker inspect $(docker ps -aq) | grep "esports/data"
+
+how to make venv: python -m venv venv
+
+how to start venv: venv\Scripts\activate
+
+how to install packages in venv: pip install -r requirements.txt
+
+
+esports folder is added to Samba to share with the network to run inference
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

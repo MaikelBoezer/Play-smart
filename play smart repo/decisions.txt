@@ -1,0 +1,15 @@
+.venv has been removed because it is remade when the poetry env is made, so it is not necessary for a distribution version of the toolkit
+
+__pycache__ has been removed because python will make it again when the code is run, so it is not necessary for a distribution version of the toolkit
+
+data folder is not removed because there are files in the json folder that are need to run the code. * double check this
+
+OBS settings folder is not removed because it makes it easy to set up the needed overlay in OBS when wanting to use the toolkit.
+
+OpenFace is removed because soon it will not be necessary anymore, because then we will be allowed to save the recording of the faces.
+
+processed folder is removed, because usage is unclear.
+
+server folder is removed, as the server has been moved to a NAS and it is no longer needed to run the server locally. 
+
+output folder is removed, because usage is unclear.

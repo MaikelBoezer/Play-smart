@@ -1,0 +1,9 @@
+*.pyc
+/dashboard_app/venv
+/dashboard_app_local/venv
+*.zip
+*.csv
+*.dat
+/play smart repo/research_software/OpenFace_2.2.0_win_x64
+/temp/obs settings/Mouse_Keyboard
+/temp

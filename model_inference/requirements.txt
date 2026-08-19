@@ -1,0 +1,11 @@
+# requirements.txt — install on the GPU PC
+# Run: pip install -r requirements.txt
+
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+pydantic==2.7.1
+torch                   # install manually via pytorch.org for correct CUDA version
+ultralytics             # YOLOv8/v11
+opencv-python
+pandas
+requests                # only needed if you run the client from the GPU PC too

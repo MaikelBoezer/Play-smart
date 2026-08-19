@@ -1,0 +1,35 @@
+CONTAINER ID   IMAGE                                  COMMAND                  CREATED          STATUS                           PORTS                                         NAMES
+   server-python-app                      focused_brown
+   server_remote_sftp                      affectionate_mayer
+   server_remote_postgres                  admiring_goodall
+   server_remote_sftp                      lucid_cerf
+   python:3.10-slim                       analytics-backend
+
+   adminer                                adminer
+  
+   research-website                       research-website
+   server-streamlit-dashboard             streamlit-dashboard
+   server-python-app                       python-app
+   postgres:latest                        30387dea9b3c_postgres-container
+   atmoz/sftp                             f5611fe7be08_sftp-container
+   server_remote_postgres                 staging_production_postgres_db
+   server_remote_sftp      		 sftp_server
+
+made with the same yaml file.
+   cradle-playometer-data-orchestration   data-orchestration
+   cradle-playometer-monitoring           monitoring
+   timescale/timescaledb:latest-pg14      vhesper-timescaledb
+
+
+
+
+http://10.4.28.2:8050
+
+http://10.4.28.2:8000/docs
+
+
+watch -n 2 "ls -lt /mnt/raid0/esports/sftp_data/input | head -20"
+watch -n 2 "ls -lt /mnt/raid0/esports/sftp_data/emotion | head -20"
+watch -n 2 "ls -lt /mnt/raid0/esports/sftp_data/gaze | head -20"
+
+/mnt/raid0/esports/sftp_data/input
